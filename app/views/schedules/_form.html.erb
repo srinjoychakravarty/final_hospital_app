@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :appointment_id %><br />
-    <%= f.number_field :appointment_id %>
-  </div>
-  <div class="field">
     <%= f.label :time_slot %><br />
-    <%= f.text_field :time_slot %>
+    <%= f.select(:time_slot, Schedule::SLOTS) %>
   </div>
   <div class="field">
     <%= f.label :available %><br />
     <%= f.check_box :available %>
+  </div>
+  <div class="field">
+    <%= f.label :appointment_id %><br />
+    <%= f.number_field :appointment_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

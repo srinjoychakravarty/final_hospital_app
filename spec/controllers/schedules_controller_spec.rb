@@ -24,7 +24,7 @@ describe SchedulesController do
   # Schedule. As you add validations to Schedule, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "appointment_id" => "1" }
+    { :appointment_id => 1, :available => true, :time_slot => "8 am - 9 am" }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -89,14 +89,14 @@ describe SchedulesController do
       it "assigns a newly created but unsaved schedule as @schedule" do
         # Trigger the behavior that occurs when invalid params are submitted
         Schedule.any_instance.stub(:save).and_return(false)
-        post :create, {:schedule => { "appointment_id" => "invalid value" }}, valid_session
+        post :create, {:schedule => { "time_slot" => "invalid value" }}, valid_session
         assigns(:schedule).should be_a_new(Schedule)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Schedule.any_instance.stub(:save).and_return(false)
-        post :create, {:schedule => { "appointment_id" => "invalid value" }}, valid_session
+        post :create, {:schedule => { "time_slot" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -110,8 +110,8 @@ describe SchedulesController do
         # specifies that the Schedule created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Schedule.any_instance.should_receive(:update_attributes).with({ "appointment_id" => "1" })
-        put :update, {:id => schedule.to_param, :schedule => { "appointment_id" => "1" }}, valid_session
+        Schedule.any_instance.should_receive(:update_attributes).with({ "time_slot" => "MyString" })
+        put :update, {:id => schedule.to_param, :schedule => { "time_slot" => "MyString" }}, valid_session
       end
 
       it "assigns the requested schedule as @schedule" do
@@ -132,7 +132,7 @@ describe SchedulesController do
         schedule = Schedule.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Schedule.any_instance.stub(:save).and_return(false)
-        put :update, {:id => schedule.to_param, :schedule => { "appointment_id" => "invalid value" }}, valid_session
+        put :update, {:id => schedule.to_param, :schedule => { "time_slot" => "invalid value" }}, valid_session
         assigns(:schedule).should eq(schedule)
       end
 
@@ -140,7 +140,7 @@ describe SchedulesController do
         schedule = Schedule.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Schedule.any_instance.stub(:save).and_return(false)
-        put :update, {:id => schedule.to_param, :schedule => { "appointment_id" => "invalid value" }}, valid_session
+        put :update, {:id => schedule.to_param, :schedule => { "time_slot" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end
