@@ -10,6 +10,7 @@
     <header class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
+          <%= link_to "Chaxz Clinic App", home_path, id: "logo" %>
           <%= link_to(image_tag("fb.png"),"https://www.facebook.com/schaxz") %>
           <%= link_to(image_tag("tw.png"),"https://twitter.com/Srinjoy_Chakrav") %>
           <nav>
@@ -31,10 +32,10 @@
           <td>
            <!-- if logged in, show side navigation functionality for vets -->
            <% if current_patient %>
-              render :partial => 'partials/side_navbar' %> 
+             <!-- render :partial => 'partials/side_navbar' %> -->
            <!-- otherwise display animal pic album -->  
            <% else %>
-              render :partial => 'partials/clinic_pix' %> 
+            <!-- render :partial => 'partials/animal_pix' %> -->
            <% end %>
           </td>
           <td> width="5">&nbsp;</td>  
@@ -43,7 +44,7 @@
       </table>    
       <footer class="footer">
         <small>
-      
+          Strictly copyrighted
         </small>
         <nav>
           <ul>
@@ -52,6 +53,7 @@
              <li><%= link_to(image_tag("contact.png"), contact_path) %></li>
              <li><%= link_to(image_tag("privacy.png"), privacy_path) %></li>
           </ul>
+              <%= link_to(image_tag("dog.png"),home_path) %>
         </nav>
       </footer>
     </div>

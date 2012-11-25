@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :specialization %><br />
-    <%= f.text_field :specialization %>
+    <%= f.select(:gender, Doctor::Specialization) %>
   </div>
   <div class="actions">
     <%= f.submit %>
