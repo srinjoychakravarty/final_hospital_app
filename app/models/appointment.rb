@@ -13,15 +13,15 @@ class Appointment < ActiveRecord::Base
   private
 
   	def available
-  		appointments_list = Appointment.all.map{|appointment| appointment.id}
+  		appointments_list = Appointment.all.map{|appointment| appointment}
 	  	appointments_list.each do|appointment|
-	  		date = appointment.date.to_s
-        date_now = self.appointment.date.to_s
-	  		if date == date_now && appointment.time_slot == self.appointment.time_slot
-	  			errors.add("This appointment is not available")
-	      		return false
+	  		date = appointment.date.to_default_s
+        date_now = self.date.to_default_s
+	  		if date == date_now && appointment.time_slot == self.time_slot
+          errors.add(:appointment, "is not available")
+	      	return false
 	  		end
 	  		return true 
-		end
-	end
+		  end
+	 end
 end
