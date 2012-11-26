@@ -21,10 +21,11 @@ describe "patients/edit" do
       assert_select "input#patient_health_id", :name => "patient[health_id]"
       assert_select "input#patient_first_name", :name => "patient[first_name]"
       assert_select "input#patient_last_name", :name => "patient[last_name]"
-      assert_select "input#patient_gender", :name => "patient[gender]"
+      assert_select "select#patient_gender", :name => "patient[gender]"
       assert_select "input#patient_phone", :name => "patient[phone]"
       assert_select "input#patient_email", :name => "patient[email]"
-      assert_select "input#patient_password_digest", :name => "patient[password_digest]"
+      assert_select "input#patient_password", :name => "patient[password]"
+      assert_select "input#patient_password_confirmation", :name => "patient[password_confirmation]"
     end
   end
 end

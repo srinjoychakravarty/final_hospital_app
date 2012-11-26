@@ -1,6 +1,6 @@
 class Appointment < ActiveRecord::Base
   attr_accessible :date, :doctor_id, :patient_id, :time_slot
-  before_save :available
+ # before_save :available
   validates :date, :doctor_id, :patient_id, :time_slot, :presence => true
   belongs_to :doctor
   belongs_to :patient

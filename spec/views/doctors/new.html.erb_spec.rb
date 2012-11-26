@@ -19,10 +19,10 @@ describe "doctors/new" do
     assert_select "form", :action => doctors_path, :method => "post" do
       assert_select "input#doctor_first_name", :name => "doctor[first_name]"
       assert_select "input#doctor_last_name", :name => "doctor[last_name]"
-      assert_select "input#doctor_gender", :name => "doctor[gender]"
+      assert_select "select#doctor_gender", :name => "doctor[gender]"
       assert_select "input#doctor_email", :name => "doctor[email]"
       assert_select "input#doctor_phone", :name => "doctor[phone]"
-      assert_select "input#doctor_specialization", :name => "doctor[specialization]"
+      assert_select "select#doctor_specialization", :name => "doctor[specialization]"
     end
   end
 end
