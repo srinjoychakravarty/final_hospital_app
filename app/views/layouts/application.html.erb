@@ -13,9 +13,11 @@
   <header>
   <ul>
   <nav class = "round">
-<%= link_to "Home", '\home' %>
-  <%= link_to "Contact" , '\contact' %>
-  <%= link_to "About Us" , '\about' %>
+<%= link_to "Home |", '/home' %>
+  <%= link_to "Contact |" , '/contact' %>
+  <%= link_to "About Us |" , '/about' %>
+    <%= link_to "Privacy Policies" , '/privacy' %>
+
   </ul>
   <ul class="free">
     <a class="call"> Free Number 44-675-674</a>
@@ -30,13 +32,14 @@
 
 <div class="footer"><!--footer navigation start -->
 <ul>
-<li><button type="button"><%= link_to "Sign Up", '#' %></button></li>
-<li><button type="button"> <%= link_to "Sign In", '#' %></button></li>
-<li><button type="button"> <%= link_to "Privacy policies", '#' %></button></li>
-<li><a href="#"> Schedule your meeting</a></li>
+<button type="button"><%= link_to "Sign Up", '/sign_up' %></button>
+<button type="button"> <%= link_to "Sign In", '/sign_in' %></button>
+<button type="button"> <%= link_to "Schedule your meeting", '#' %></button>
 </ul>
-
-<p>&copy; NAO. all rights reserved</p>
+<design>
+<p> &copy; NAO. all rights reserved</p>
 <p class="de">Designed by: Nourhen, Talal, and Srinjoy</a></p>
+</design>
+
 </div><!--footer navigation end -->
 </html>

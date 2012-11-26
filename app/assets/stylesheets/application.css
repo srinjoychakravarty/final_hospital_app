@@ -17,6 +17,9 @@ font-size: 120%;
 padding: 40px;
 background: #fff; 
 }
+free {
+padding-right:40px;
+}
 /* links */
 a {
 color: #09c;
@@ -56,7 +59,7 @@ text-decoration: underline;
 
 /* footer */ 
 .footer{
-text-align: center;
+text-align: right;
 margin-top: 10px;
 width:710px;
 margin-left:auto
@@ -64,4 +67,18 @@ margin-right:auto
 }
 footer nav{
 float:none;
+}
+design {
+text-align: right;
+margin-top: 10px;
+width:710px;
+margin-left:auto
+margin-right:auto
+background: #C0C0C0;
+
+}
+round {
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
 }
