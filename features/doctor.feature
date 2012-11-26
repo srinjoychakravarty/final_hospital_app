@@ -8,60 +8,55 @@ Feature: Doctor information
 
 				Scenario: List Doctors
 					Given I am on the 'doctors' page
-					Then for the "title", I should see " | Owner Listing"
-					And for the "th", I should see "Owner"
-					And for the "th", I should see "Country"
+					And for the "th", I should see "First name"
+					And for the "th", I should see "Last name"
+					And for the "th", I should see "Gender"
 					And for the "th", I should see "Email"
-					And for the "th", I should see "Active"
-					And for the "th", I should see "Address"
-					And for the "th", I should see "City"
 					And for the "th", I should see "Phone"
-					And for the "td", I should see "Rishika Xi"
-					And for the "td", I should see "DEN"
-					And for the "td", I should see "rishikaachy@yahoo.com"
-					And for the "td", I should see "false"
-					And for the "td", I should see "MapleWood Street"
-					And for the "td", I should see "Silkeborg"
-					And for the "td", I should see "97444724223"
-					And for the "body", I should see "Member List of Pet-Owners"
-					And for the "body", I should see a link to "Add New Owner"
+					And for the "th", I should see "Specialization"
+					And for the "td", I should see "Talal"
+					And for the "td", I should see "Shoeb"
+					And for the "td", I should see "Male"
+					And for the "td", I should see "talal@cmu.edu"
+					And for the "td", I should see "97477155015"
+					And for the "td", I should see "Dentist"
+					And for the "body", I should see "Listing doctors"
+					And for the "body", I should see a link to "New Doctor"
 
-				Scenario: Create Owner
-					Given I am on the 'New Owner' page
-					Then for the "title", I should see "Pet App | Register Owner"
-					When I enter "Srinjoy" for "Firstname"
-					And I enter "Chakravarty" for "Lastname"
-					And I enter "chaxz93@gmail.com" for "Email"
-					And I enter "55566090897" for "Phone"
-					And I enter "The Pearl Qatar" for "Address" 
-					And I enter "Doha" for "City"  
-					And I select "Qatar" for "Country"
-					And I check the "Active" box
-					And I click the "Create Owner" button
-					Then I should get to see "Created new owner Srinjoy Chakravarty!"
-					And I should get to see "Name:"
-					And I should get to see "Srinjoy Chakravarty"
-					And I should get to see "Address:"
-					And I should get to see "The Pearl Qatar"
-					And I should get to see "Location:"
-					And I should get to see "Doha, QA"
+				Scenario: Create Doctor
+					Given I am on the 'New Doctor' page
+					When I enter "Talal" for "First name"
+					And I enter "Shoeb" for "Last name"
+					And I select "Male" for "Gender"
+					And I enter "talal@cmu.edu" for "Email"
+					And I enter "97477155015" for "Phone"
+					And I select "Dentist" for "Specialization"  
+					And I click the "Create Doctor" button
+					Then I should get to see "Doctor was successfully created."
+					And I should get to see "First name:"
+					And I should get to see "Talal"
+					And I should get to see "Last name:"
+					And I should get to see "Shoeb"
+					And I should get to see "Gender:"
+					And I should get to see "Male"
 					And I should get to see "Email:"
-					And I should get to see "chaxz93@gmail.com"
+					And I should get to see "talal@cmu.edu"
 					And I should get to see "Phone:"
-					And I should get to see "66090897"
-					And I should get to see "Active with QATS: true" 
+					And I should get to see "97477155015"
+					And I should get to see "Specialization:"
+					And I should get to see "Dentist" 
 
-				Scenario: Update Owner
-					Given I am on the 'owners' page
-					When I follow the "Edit" link for "Rishika Xi"
+				Scenario: Update Doctor
+					Given I am on the 'doctors' page
+					When I follow the "Edit" link for "Talal"
 					And I change the email address to "chaxz@cmu.edu"
 					And I click the "Update" button
-					Then I should see "Rishika Xi was successfully updated!"
+					Then I should see "Doctor was successfully updated."
 					And I should see "Email: chaxz@cmu.edu"
 
-				Scenario: Delete Owner
-   					Given I am on the 'owners' page
-    				When I follow the "Destroy" link for "Rishika Xi"
-    				Then I should not see "Rishika Xi"	
+				Scenario: Delete Doctor
+   					Given I am on the 'doctors' page
+    				When I follow the "Destroy" link for "Talal"
+    				Then I should not see "Talal"	
 
 
