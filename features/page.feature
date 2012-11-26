@@ -7,35 +7,35 @@ Feature: Standard Business
 		Scenario: Homepage
 			When I go to the application root
 			Then I should see "Welcome to our homepage!"
-			And I should see "Joy Veterinary Services will get ur lil one up & running ;)"
-			And I should see a button named "Sign up now!"
-			And I should see a button named "Log in"
-			And the "title" of the page should be "Home"
+			And I should see "Chax Clinic App @ your service!"
+			And I should see a button named "Sign up now"
+			And I should see a button named "Log In"
+		
 			
 		Scenario: Functionality of Sign-up button
 			Given I am on the home page
 			When I click on the button named "Sign up now!"
 			Then I should navigate to the "Sign Up" page
-			And the "title" of the page should be "Sign up"
+	
 
 		Scenario: Functionality of Log In button
 			Given I am on the home page
 			When I click on the button named "Log In"
 			Then I should navigate to the "Log in" page
-			And the "title" of the page should be "Log in"	
+		
 					
 
 		Scenario: Aboutpage
 			When I go to the about page
-			Then I should see "About Us"
+			Then I should see "Pages#about"
 
 		Scenario: Contactpage
 			When I go to the contact page
-			Then I should see "Contact Us"
+			Then I should see "Pages#contact"
 
 		Scenario: Privacypage
 			When I go to the privacy page
-			Then I should see "Our Privacy Policy"
+			Then I should see "Pages#privacy"
 
 		Scenario: Do not see the default rails page
 			When I go to the home page
@@ -46,22 +46,17 @@ Feature: Standard Business
 		Scenario: View 'About Us'
 			Given I am on the home page
 			When I follow the "About Us" link
-			Then the "title" of the page should be "About Us"
+		
 
 		Scenario: View 'Contact Us'
 			Given I am on the home page
 			When I follow the "Contact Us" link
-			Then the "title" of the page should be "Contact Us"
+			
 
 		Scenario: View 'Privacy Policy'
 			Given I am on the home page
 			When I follow the "Privacy Policy" link
-			Then the "title" of the page should be "Privacy Policy"
-
-
-		Scenario: View webmaster information in footer
-			Given I am on the home page
-			Then "Webmaster: Srinjoy Chakravarty" should be part of the "footer"
+			
 
 		Scenario: View About Us information in header
 			Given I am on the home page
