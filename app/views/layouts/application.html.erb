@@ -1,59 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title %></title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "Chaxz Clinic App", home_path, id: "logo" %>
-          <%= link_to(image_tag("fb.png"),"https://www.facebook.com/schaxz") %>
-          <%= link_to(image_tag("tw.png"),"https://twitter.com/Srinjoy_Chakrav") %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Home",    root_path %></li>
-              <li><%= link_to "About Us",   about_path %></li>
-              <li><%= link_to "Contact Us", contact_path %></li>
-              <li><%= link_to "Privacy Policy", privacy_path %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header> 
-    <% flash.each do |name, msg| %>
-    <% end %>
-    <div class="container">
-      <table border="0">
-        <tr>
-          <td>
-           <!-- if logged in, show side navigation functionality for vets -->
-           <% if current_patient %>
-           <!-- otherwise display animal pic album -->  
-           <% else %>
-            <!-- render :partial => 'partials/animal_pix' %> -->
-           <% end %>
-          </td>
-          <td><%= yield %></td>
-        </tr>
-      </table>    
-      <footer class="footer">
-        <small>
-          Strictly copyrighted
-        </small>
-        <nav>
-          <ul>
-             <li><%= link_to(image_tag("home.png"), root_path) %></li>
-             <li><%= link_to(image_tag("about.png"), about_path) %></li>
-             <li><%= link_to(image_tag("contact.png"), contact_path) %></li>
-             <li><%= link_to(image_tag("privacy.png"), privacy_path) %></li>
-          </ul>
-              <%= link_to(image_tag("dog.png"),home_path) %>
-        </nav>
-      </footer>
-    </div>
-  </body>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>NAO Clinic</title>
+<!-- <link href="style.css" rel="stylesheet" type="text/css" /> --> 
+<%= stylesheet_link_tag 'application', :media => 'screen' %>
+
+</head>
+
+<body>
+<div class="container">
+  <header>
+  <ul>
+  <nav class = "round">
+<%= link_to "Home |", '/home' %>
+  <%= link_to "Contact |" , '/contact' %>
+  <%= link_to "About Us |" , '/about' %>
+    <%= link_to "Privacy Policies" , '/privacy' %>
+
+  </ul>
+  <ul class="free">
+    <a class="call"> Free Number 44-675-674</a>
+  </ul>
+    <%= image_tag("header_pic.gif", :alt => "NAO", :class => "round") %>
+   </nav>
+</div>
+</header>
+<section class= "round">
+<%=  yield %>
+</section>
+
+<div class="footer"><!--footer navigation start -->
+<ul>
+<button type="button"><%= link_to "Sign Up", '/sign_up' %></button>
+<button type="button"> <%= link_to "Sign In", '/sign_in' %></button>
+<button type="button"> <%= link_to "Schedule your meeting", '#' %></button>
+</ul>
+<design>
+<p> &copy; NAO. all rights reserved</p>
+<p class="de">Designed by: Nourhen, Talal, and Srinjoy</a></p>
+</design>
+
+</div><!--footer navigation end -->
 </html>
