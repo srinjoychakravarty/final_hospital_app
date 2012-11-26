@@ -1,6 +1,6 @@
 class Appointment < ActiveRecord::Base
   attr_accessible :date, :doctor_id, :patient_id, :time_slot
- # before_save :available
+  before_save :available
   validates :date, :doctor_id, :patient_id, :time_slot, :presence => true
   belongs_to :doctor
   belongs_to :patient
@@ -13,14 +13,15 @@ class Appointment < ActiveRecord::Base
   private
 
   	def available
-  		appointments_list = Appointment.all.map{|appointment| appointment.id}
+  		appointments_list = Appointment.all.map{|appointment| appointment}
 	  	appointments_list.each do|appointment|
-	  		date = appointment.date
-	  		if appointment.date == self.appointment.date && appointment.time_slot == self.appointment.time_slot
-	  			errors.add("This appointment is not available")
-	      		return false
+	  		date = appointment.date.to_default_s
+        date_now = self.date.to_default_s
+	  		if date == date_now && appointment.time_slot == self.time_slot
+          errors.add(:appointment, "is not available")
+	      	return false
 	  		end
 	  		return true 
-		end
-	end
+		  end
+	 end
 end
