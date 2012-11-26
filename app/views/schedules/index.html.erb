@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Appointment</th>
+    <th>Doctor</th>
     <th>Time slot</th>
     <th>Available</th>
     <th></th>
@@ -12,7 +12,7 @@
 
 <% @schedules.each do |schedule| %>
   <tr>
-    <td><%= schedule.appointment_id %></td>
+    <td><%= schedule.doctor_id %></td>
     <td><%= schedule.time_slot %></td>
     <td><%= schedule.available %></td>
     <td><%= link_to 'Show', schedule %></td>

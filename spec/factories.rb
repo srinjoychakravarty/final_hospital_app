@@ -13,7 +13,7 @@ FactoryGirl.define do
 	end
 
     factory :doctor do
-			first_name "Talal"
+		first_name "Talal"
         last_name "Shoeb"
         gender "Male"
         email "talal@cmu.edu"
@@ -24,12 +24,11 @@ FactoryGirl.define do
     factory :appointment do
         doctor_id 1
         date 5.days.ago
-        schedule_id 1
 		patient_id 1
 	end
 
     factory :schedule do
-		appointment_id 1
+		doctor_id 1
 		available true
 		time_slot "8 am - 9 am"
 	end	

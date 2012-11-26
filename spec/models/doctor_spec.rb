@@ -27,11 +27,9 @@ describe Doctor do
         it {should allow_value("Male").for(:gender)}
         it {should allow_value("Female").for(:gender)}
     end
-    describe "Rejects bad gender" do
-        it {should_not allow_value("bad").for(:gender)}
-    end
     it "should have the correct associations" do
         should have_many(:appointments)
+        should have_many(:schedules)
     end
 	describe "All factories are properly created" do
 	    before(:each) do

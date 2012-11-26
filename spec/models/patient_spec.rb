@@ -45,11 +45,7 @@ describe Patient do
 		it {should allow_value("Male").for(:gender)}
 		it {should allow_value("Female").for(:gender)}
 	end	
-
-	describe "Rejects invalid gender" do
-		it {should_not allow_value("Discrete").for(:gender)}
-	end	
-
+	
 	describe "Use factories for setup" do
 	
 		before (:each) do

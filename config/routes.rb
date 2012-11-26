@@ -1,10 +1,13 @@
 ClinicApp::Application.routes.draw do
-  resources :patients
-  resources :sessions
   resources :schedules
+
   resources :appointments
+
   resources :doctors
 
+  resources :patients
+  resources :sessions
+  resources :schedules  
   root :to => 'pages#home'
 
   match '/home', :to => 'pages#home'

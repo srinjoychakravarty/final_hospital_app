@@ -12,16 +12,15 @@ describe Appointment do
     describe "Validation Macros" do
         it {should validate_presence_of(:doctor_id)}
         it {should validate_presence_of(:date)}
-        it {should validate_presence_of(:schedule_id)}
         it {should validate_presence_of(:patient_id)}
     end
     it "should have the correct associations" do
-        should have_one(:schedule)
+        should have_one(:schedule).through(:doctor)
         should belong_to(:doctor)
         should belong_to(:patient)
     end
     describe "Testing Scopes" do
-        it "should get all the last 'x' number of vaccinations" do
+        it "should get all the last 'x' number of appointments" do
             Appointment.latest(1).size.should == 1
             Appointment.latest(2).size.should == 2
         end

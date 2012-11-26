@@ -2,7 +2,6 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
-    @title = "Appointments"
     @appointments = Appointment.all
 
     respond_to do |format|
@@ -14,7 +13,6 @@ class AppointmentsController < ApplicationController
   # GET /appointments/1
   # GET /appointments/1.json
   def show
-    @title = "Your Appointment"
     @appointment = Appointment.find(params[:id])
 
     respond_to do |format|
@@ -26,7 +24,6 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new
   # GET /appointments/new.json
   def new
-    @title = "Create Appointment"
     @appointment = Appointment.new
 
     respond_to do |format|
@@ -37,7 +34,6 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/1/edit
   def edit
-    @title = "Edit Appointment"
     @appointment = Appointment.find(params[:id])
   end
 

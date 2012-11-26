@@ -4,12 +4,12 @@ describe "schedules/index" do
   before(:each) do
     assign(:schedules, [
       stub_model(Schedule,
-        :appointment_id => 1,
+        :doctor_id => 1,
         :time_slot => "Time Slot",
         :available => false
       ),
       stub_model(Schedule,
-        :appointment_id => 1,
+        :doctor_id => 1,
         :time_slot => "Time Slot",
         :available => false
       )
