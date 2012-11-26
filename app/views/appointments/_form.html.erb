@@ -15,10 +15,12 @@
     <%= f.label :patient_id %><br />
     <%= f.number_field :patient_id %>
   </div>
+
   <div class="field">
     <%= f.label :doctor_id %><br />
-    <%= f.number_field :doctor_id %>
+    <%= collection_select(:appointment, :doctor_id, Doctor.all, :id, :proper_name) %>
   </div>
+
   <div class="field">
     <%= f.label :date %><br />
     <%= f.date_select :date %>
@@ -27,6 +29,7 @@
     <%= f.label :time_slot %><br />
     <%= f.select(:time_slot, Appointment::SLOTS) %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
