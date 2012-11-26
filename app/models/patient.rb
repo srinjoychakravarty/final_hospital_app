@@ -4,6 +4,7 @@ class Patient < ActiveRecord::Base
   has_secure_password
   before_save :format_phone
   has_many :appointments
+  has_many :doctors ,:through => :appointments
   
   validates_presence_of :password, :on => :create
   validates :email, :date_of_birth, :first_name, :gender, :health_id, :last_name, :phone, :presence => true

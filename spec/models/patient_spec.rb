@@ -4,6 +4,7 @@ describe Patient do
 
 	it "should have proper associations" do
 		should have_many(:appointments)
+		should have_many(:doctors).through(:appointments)
 	end	
 
 	describe "Validation Macros" do

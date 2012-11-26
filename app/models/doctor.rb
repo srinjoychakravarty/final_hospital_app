@@ -1,7 +1,7 @@
 class Doctor < ActiveRecord::Base
   attr_accessible :email, :first_name, :gender, :last_name, :phone, :specialization
-  has_many :schedules
   has_many :appointments
+  has_many :patients ,:through => :appointments
   before_save :format_phone
   validates :email, :first_name, :gender, :last_name, :phone, :specialization, :presence => true
   validates_format_of :email, :with => /^[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info|qa))$/i, :message => "is not a valid format"

@@ -23,13 +23,9 @@ FactoryGirl.define do
 
     factory :appointment do
         doctor_id 1
-        date 5.days.ago
-		patient_id 1
+        patient_id 1
+        date 5.days.ago.to_date
+		time_slot "8 am - 9 am"
 	end
 
-    factory :schedule do
-		doctor_id 1
-		available true
-		time_slot "8 am - 9 am"
-	end	
 end

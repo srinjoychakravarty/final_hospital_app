@@ -23,6 +23,10 @@
     <%= f.label :date %><br />
     <%= f.date_select :date %>
   </div>
+  <div class="field">
+    <%= f.label :time_slot %><br />
+    <%= f.select(:time_slot, Appointment::SLOTS) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

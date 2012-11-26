@@ -29,7 +29,7 @@ describe Doctor do
     end
     it "should have the correct associations" do
         should have_many(:appointments)
-        should have_many(:schedules)
+        should have_many(:patients).through(:appointments)
     end
 	describe "All factories are properly created" do
 	    before(:each) do

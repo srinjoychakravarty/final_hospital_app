@@ -1,6 +1,4 @@
 ClinicApp::Application.routes.draw do
-  resources :schedules
-
   resources :appointments
 
   resources :doctors
