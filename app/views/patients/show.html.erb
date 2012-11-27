@@ -35,11 +35,6 @@
   <%= @patient.email %>
 </p>
 
-<p>
-  <b>Password digest:</b>
-  <%= @patient.password_digest %>
-</p>
-
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<%= link_to 'Back', root_path %>

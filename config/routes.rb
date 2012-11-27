@@ -1,4 +1,5 @@
 ClinicApp::Application.routes.draw do
+
   resources :appointments
 
   resources :doctors
@@ -16,3 +17,4 @@ ClinicApp::Application.routes.draw do
   match '/login', :to => 'sessions#new'
   match '/logout', :to => 'sessions#destroy'
 end
+

@@ -27,19 +27,31 @@
 </div>
 </header>
 <section class= "round">
-<%=  yield %>
+  <tr>
+    <td>
+      <% if current_patient %>
+        <ul> 
+          <button type="button"> <%= link_to "Schedule your meeting", '/appointments/new' %></button>
+          <button type="button"> <%= link_to "Log out", '/logout' %></button>     
+        </ul>    
+      <% else %>
+        <ul>
+          <button type="button"><%= link_to "Sign Up", '/signup' %></button>
+          <button type="button"> <%= link_to "Log in", '/login' %></button>
+        </ul>
+      <% end %>
+    </td>
+    <td><%= yield %></td>
+  </tr>
+
 </section>
 
 <div class="footer"><!--footer navigation start -->
-<ul>
-<button type="button"><%= link_to "Sign Up", '/sign_up' %></button>
-<button type="button"> <%= link_to "Sign In", '/sign_in' %></button>
-<button type="button"> <%= link_to "Schedule your meeting", '#' %></button>
-</ul>
-<design>
-<p> &copy; NAO. all rights reserved</p>
-<p class="de">Designed by: Nourhen, Talal, and Srinjoy</a></p>
-</design>
+
+  <design>
+    <p> &copy; NAO. all rights reserved</p>
+    <p class="de">Designed by: Nourhen, Talal, and Srinjoy</a></p>
+  </design>
 
 </div><!--footer navigation end -->
 </html>
