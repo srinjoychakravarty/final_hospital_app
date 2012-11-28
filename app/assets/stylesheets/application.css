@@ -8,9 +8,9 @@ display:block;
 body {
 background: #cff;
 }
-header (
+header {
 padding-top: 20px;
-)
+}
 section {
 margin-top: 1em;
 font-size: 120%;
