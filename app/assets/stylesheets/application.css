@@ -33,7 +33,7 @@ text-decoration: underline;
 nav {
 float: left;
 background: white;
-padding:; 0 0.7em;
+padding: 0 0.7em;
 white-space: nowrap;
 }
 nav ul {
@@ -62,8 +62,8 @@ text-decoration: underline;
 text-align: right;
 margin-top: 10px;
 width:710px;
-margin-left:auto
-margin-right:auto
+margin-left:auto;
+margin-right:auto;
 }
 footer nav{
 float:none;
@@ -72,8 +72,8 @@ design {
 text-align: right;
 margin-top: 10px;
 width:710px;
-margin-left:auto
-margin-right:auto
+margin-left:auto;
+margin-right:auto;
 background: #C0C0C0;
 
 }
