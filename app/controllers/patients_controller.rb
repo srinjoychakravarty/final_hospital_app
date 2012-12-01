@@ -48,6 +48,7 @@ class PatientsController < ApplicationController
 
     respond_to do |format|
       if @patient.save
+        session[:patient_id] = patient.id
         format.html { redirect_to @patient, :notice => "Signed up!"}
         format.json { render json: @patient, status: :created, location: @patient }
       else
