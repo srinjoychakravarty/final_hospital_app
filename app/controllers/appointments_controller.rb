@@ -27,7 +27,7 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new.json
   def new
     @title = "New Appointment"
-    @appointment = Appointment.new
+    @appointment = current_patient.appointments.new
 
     respond_to do |format|
       format.html # new.html.erb
